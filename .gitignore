@@ -1,0 +1,7 @@
+*.log
+*.pot
+*.pid
+*.swp
+*.swo
+*.bak
+*.dat

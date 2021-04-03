@@ -1,0 +1,5 @@
+package.path = package.path .. "lua/?.lua;"
+package.path = package.path .. "lua/?/init.lua;"
+package.path = package.path .. "lua/libs/?.lua;"
+package.path = package.path .. "lua/libs/?/init.lua;"
+package.cpath = package.cpath .. "lua/libs/?.so;" 

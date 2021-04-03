@@ -1,0 +1,47 @@
+# Waf规则配罝，布林值一律小写
+enable:
+    # 各规则开关
+    global: true
+    whitelist_ip: false
+    blacklist_ip: false
+    whitelist_domain: false
+    blacklist_uri: false
+    blacklist_user_agent: false
+    limit_frequency: false
+    limit_cc_attack: true
+rule:
+    # whiteListIP IP白名单
+    # 白名单内的IP，一律通过
+    whitelist_ip:
+    - '127.0.0.1'
+
+    # blackListIP IP黑名单
+    blacklist_ip: 
+    - '192.168.1.1'
+
+    # whiteListDomain 域名限制
+    whitelist_domain:
+    - 'baidu.com'
+
+    # blackListUri: 请求路径限制
+    blacklist_uri:
+    - '/version'
+
+    # blackListUserAgent: UserAgent限制
+    blacklist_user_agent:
+    - 'java'
+
+    # limitFrequency 请求频率限制
+    # 格式: '域名, 路径, 比重'
+    # Ex:
+    # 'baidu.com, /api, 0.1' - 访问 baidu.com/api，限制10%的请求
+    # '*,         /,    0.2' - 限制20% 所有的域名，所有路径
+    limit_frequency: 
+    - 'baidu.com, /api, 0.4'
+
+    # limitCcAttack CC攻击限制
+    # 格试: '域名, 路径, 次数, 间隔'
+    # Ex:
+    # 'baidu.com, /api, 30, 5' - 每5秒只能访问 baidu.com/api 30次
+    limit_cc_attack:
+    - 'baidu.com, /api, 30, 3'
