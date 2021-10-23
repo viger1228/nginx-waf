@@ -2,20 +2,20 @@
 
 [![](https://img.shields.io/badge/powered%20by-walker-brightgreen.svg?style=flat-square)](https://github.com/viger1228) 
 
-[English](https://github.com/viger1228/nginx-waf/blob/master/README.md) [繁體中文](https://github.com/viger1228/nginx-waf/blob/master/README.zh-tw.md)
+[English](https://github.com/viger1228/nginx-waf/blob/master/README.md)、[繁體中文](https://github.com/viger1228/nginx-waf/blob/master/README.zh-tw.md)
 
 藉由OpenResty Lua 實現基於IP、域名、URI、User Agent 簡單WAF防護
 
 ## Install
 
-#### 環境：
+### 環境：
 
 ```shell
 系統：Centos 7
 版本：3.10.0-1160.11.1.el7.x86_64
 ```
 
-#### OpenResty 安裝：
+### OpenResty 安裝：
 
 ```shell
 yum install yum-utils -y
@@ -28,14 +28,14 @@ ln -s /usr/local/openresty/nginx/sbin/nginx /usr/local/sbin/nginx
 cd /usr/local/openresty/nginx/ && nginx 
 ```
 
-#### Nginx Waf 安裝：
+### Nginx Waf 安裝：
 
 ```shell
 git clone https://github.com/viger1228/nginx-waf.git
 cp -r nginx-waf/lua /usr/local/openresty/nginx/
 ```
 
-#### 修改 Nginx.conf  配罝：
+### 修改 Nginx.conf  配罝：
 
 ```nginx
 user root;
@@ -62,7 +62,7 @@ http {
 }
 ```
 
-#### Nginx 測試
+### Nginx 測試
 
 ```shell
 nginx -s reload
@@ -71,7 +71,7 @@ curl '127.0.0.1'
 200 OK
 ```
 
-#### WAF 程序配罝
+### WAF 程序配罝
 
 ```lua
 # vim lua/waf/conf/init.lua
@@ -106,7 +106,7 @@ local _M = {
 }
 ```
 
-#### WAF 規則配罝 (YAML模式)
+### WAF 規則配罝 (YAML模式)
 
 ```yaml
 # vim lua/waf/conf/rule.yaml
@@ -158,7 +158,7 @@ rule:
     - 'baidu.com, /api, 30, 3'
 ```
 
-#### WAF 規則配罝 (Redis模式)
+### WAF 規則配罝 (Redis模式)
 
 ```shell
 # Redis key 列表
@@ -182,7 +182,7 @@ SA_waf_rule_limit_frequency
 SA_waf_rule_limit_cc_attack
 ```
 
-#### WAF 測試
+### WAF 測試
 
 ```
 nginx -s reload
@@ -191,7 +191,7 @@ for n in $(seq 1 100); do \
 done
 ```
 
-#### 日志查看
+### 日志查看
 
 ```shell
 tailf /usr/local/openresty/nginx/logs/waf.log
