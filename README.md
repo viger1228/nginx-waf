@@ -191,7 +191,7 @@ for n in $(seq 1 100); do \
 done
 ```
 
-### Log Pah
+### Log Path
 
 ```shell
 tailf /usr/local/openresty/nginx/logs/waf.log
