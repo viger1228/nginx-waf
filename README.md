@@ -158,7 +158,7 @@ rule:
     - 'baidu.com, /api, 30, 3'
 ```
 
-### WAF Rule Settings(Redis model)
+### WAF Rule Settings (Redis model)
 
 ```shell
 # Redis key list
@@ -182,7 +182,7 @@ SA_waf_rule_limit_frequency
 SA_waf_rule_limit_cc_attack
 ```
 
-### WAF
+### WAF Test
 
 ```
 nginx -s reload
