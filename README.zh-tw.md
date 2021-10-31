@@ -2,7 +2,7 @@
 
 [![](https://img.shields.io/badge/powered%20by-walker-brightgreen.svg?style=flat-square)](https://github.com/viger1228) 
 
-[English](https://github.com/viger1228/nginx-waf/blob/master/README.md)、[繁體中文](https://github.com/viger1228/nginx-waf/blob/master/README.zh-tw.md)
+[English](https://github.com/viger1228/nginx-waf/blob/master/README.md) | [繁體中文](https://github.com/viger1228/nginx-waf/blob/master/README.zh-tw.md)
 
 藉由OpenResty Lua 實現基於IP、域名、URI、User Agent 簡單WAF防護
 
